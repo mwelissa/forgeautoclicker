@@ -13,7 +13,7 @@ plugins {
 
 sourceSets {
     main {
-        extra["refMap"] = "examplemod.mixins.refmap.json"
+        extra["refMap"] = "autoclicker.mixins.refmap.json"
         output.setResourcesDir(java.outputDir)
     }
 }
@@ -26,7 +26,7 @@ minecraft {
     makeObfSourceJar = false
     clientJvmArgs.add("-Delementa.dev=true")
     clientRunArgs.add("--tweakClass gg.essential.loader.stage0.EssentialSetupTweaker")
-    clientRunArgs.add("--mixin examplemod.mixins.json")
+    clientRunArgs.add("--mixin autoclicker.mixins.json")
 }
 
 val embed: Configuration by configurations.creating {
@@ -68,7 +68,7 @@ tasks {
             "ForceLoadAsMod" to true,
             "ModSide" to "CLIENT",
             "TweakClass" to "gg.essential.loader.stage0.EssentialSetupTweaker",
-            "MixinConfigs" to "examplemod.mixins.json"
+            "MixinConfigs" to "autoclicker.mixins.json"
         )
 
         configurations = listOf(embed)

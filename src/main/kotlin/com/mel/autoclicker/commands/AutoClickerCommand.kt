@@ -1,11 +1,14 @@
-package com.desco.examplemod.commands
+package com.mel.autoclicker.commands
 
-import com.desco.examplemod.core.Config
+import com.mel.autoclicker.core.Config
 import gg.essential.api.EssentialAPI
 import gg.essential.api.commands.Command
 import gg.essential.api.commands.DefaultHandler
 
-object ExampleCommand: Command("ex") {
+object AutoClickerCommand: Command("autoclicker") {
+
+    override val commandAliases: Set<Alias>
+        get() = setOf(Alias("ac"))
 
     @DefaultHandler
     fun handle() {

@@ -1,4 +1,4 @@
-package com.desco.examplemod.events.packet
+package com.mel.autoclicker.events.packet
 
 import net.minecraft.network.Packet
 import net.minecraftforge.fml.common.eventhandler.Cancelable

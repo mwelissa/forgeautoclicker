@@ -1,0 +1,13 @@
+{
+  "verbose": true,
+  "minVersion": "0.8.0",
+  "compatibilityLevel": "JAVA_8",
+  "package": "com.mel.autoclicker.mixins",
+  "refmap": "mel.autoclicker.refmap.json",
+  "mixins": [
+    "ModListMixin"
+  ],
+  "client": [
+    "MinecraftMixin"
+  ]
+}

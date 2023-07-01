@@ -1,4 +1,4 @@
-package com.desco.examplemod.events.packet
+package com.mel.autoclicker.events.packet
 
 import io.netty.channel.ChannelDuplexHandler
 import io.netty.channel.ChannelHandlerContext
