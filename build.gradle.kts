@@ -13,7 +13,7 @@ plugins {
 
 sourceSets {
     main {
-        extra["refMap"] = "autoclicker.mixins.refmap.json"
+        extra["refMap"] = "mel.autoclicker.refmap.json"
         output.setResourcesDir(java.outputDir)
     }
 }
