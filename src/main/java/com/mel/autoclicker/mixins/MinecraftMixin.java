@@ -62,6 +62,7 @@ public abstract class MinecraftMixin {
 
     @Redirect(method = "runTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/settings/KeyBinding;isPressed()Z"))
     public boolean redirectMethod(KeyBinding keyBinding) {
+        if (this.objectMouseOver == null) return keyBinding.isPressed();
         if (keyBinding == this.gameSettings.keyBindAttack && this.objectMouseOver.typeOfHit != MovingObjectPosition.MovingObjectType.BLOCK && this.gameSettings.keyBindAttack.isKeyDown() && Config.INSTANCE.getLeftEnabled()) {
             return false;
         }
@@ -70,6 +71,9 @@ public abstract class MinecraftMixin {
 
     @Inject(method = "sendClickBlockToController", at = @At(value = "TAIL"))
     private void click(boolean leftClick, CallbackInfo ci) {
+        if(this.objectMouseOver == null) {
+            return;
+        }
         if (this.gameSettings.keyBindAttack.isKeyDown() && this.objectMouseOver.typeOfHit != MovingObjectPosition.MovingObjectType.BLOCK && !this.thePlayer.isUsingItem() && Config.INSTANCE.getLeftEnabled()) {
             this.clickMouse();
         }
