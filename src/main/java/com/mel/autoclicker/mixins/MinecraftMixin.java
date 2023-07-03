@@ -62,7 +62,7 @@ public abstract class MinecraftMixin {
 
     @Redirect(method = "runTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/settings/KeyBinding;isPressed()Z"))
     public boolean redirectMethod(KeyBinding keyBinding) {
-        if (keyBinding.getKeyDescription().equals("key.attack") && this.objectMouseOver.typeOfHit != MovingObjectPosition.MovingObjectType.BLOCK && this.gameSettings.keyBindAttack.isKeyDown() && Config.INSTANCE.getLeftEnabled()) {
+        if (keyBinding == this.gameSettings.keyBindAttack && this.objectMouseOver.typeOfHit != MovingObjectPosition.MovingObjectType.BLOCK && this.gameSettings.keyBindAttack.isKeyDown() && Config.INSTANCE.getLeftEnabled()) {
             return false;
         }
         return keyBinding.isPressed();
